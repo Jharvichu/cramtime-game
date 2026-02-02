@@ -15,6 +15,10 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
+# Backups
+_Recovery/
+_Recovery*
+
 # ------------------------------------
 # IDE & EDITORS (VS, Rider, VSCode)
 # ------------------------------------
