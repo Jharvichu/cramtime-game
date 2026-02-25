@@ -1,0 +1,34 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Menus/MainMenu/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=34c638bf53f63f24cbd1902af001c81f&amp;type=3#MainMenuStyle" />
+    <Style src="project://database/Assets/_Project/Scripts/UI/Global/Theme/Common/PixelButtonStyles.uss?fileID=7433441132597879392&amp;guid=bd1d9d82501e44b449b0b494f9b6cb9e&amp;type=3#PixelButtonStyles" />
+    <ui:VisualElement name="MainMenuBackground" class="menu-screen">
+
+        <ui:VisualElement name="SideLeft" class="menu__side-panel" />
+
+        <ui:VisualElement name="MainContent" class="menu__center-panel">
+
+            <ui:VisualElement name="LogoContainer" class="menu__logo-wrapper">
+                <ui:VisualElement name="GameLogo" class="logo-image" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="IdentityCard" class="identity-card">
+                <ui:Label text="IDENTIFICACION UNIVERSITARIO:" class="identity-label" />
+                <ui:VisualElement class="identity__input-group">
+                    <ui:TextField name="InputPlayerName" placeholder-text="INGRESA TU NOMBRE..." max-length="16" class="input-field--name" />
+                    <ui:Button name="BtnUpdateName" text="OK" class="button--update" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement name="ButtonGroup" class="menu__button-group">
+                <ui:Button text="CREAR PARTIDA" name="BtnCreate" class="button button--menu button--primary" />
+                <ui:Button text="UNIRSE A PARTIDA" name="BtnJoin" class="button button--menu button--primary" />
+                <ui:Button text="AJUSTES" name="BtnSettings" class="button button--menu button--secondary" />
+                <ui:Button text="SALIR DEL AULA" name="BtnQuit" class="button button--menu button--danger" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <ui:VisualElement name="SideRight" class="menu__side-panel" />
+
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,71 @@
+VisualElement {}
+
+.server-item {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-bg-paper);
+    border-width: 2px;
+    border-color: var(--color-border-paper);
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition-duration: 0.1s;
+}
+
+.server-item:hover {
+    background-color: white;
+    border-color: rgb(100, 150, 255);
+}
+
+.server-item__icon {
+    width: 55px;
+    height: 55px;
+    background-color: var(--color-key-shadow);
+    border-radius: 8px;
+    margin-right: 15px;
+    /* Al ser pixel art, asegura que no se vea borroso */
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.server-item__info {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.server-item__name {
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+    font-size: 18px;
+}
+
+.server-item__map-text {
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.server-item__players {
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 14px;
+    margin-right: 20px;
+    -unity-text-align: middle-center;
+}
+
+.server-item__button {
+    width: 80px;
+    height: 45px;
+    font-size: 14px;
+    /* Ajustamos profundidad proporcional al tamaño */
+    border-bottom-width: 5px; 
+    background-color: var(--color-key-bg);
+}
+
+.server-item__button:active {
+    border-bottom-width: 1px;
+    margin-top: 4px;
+    background-color: rgb(230, 230, 230);
+}

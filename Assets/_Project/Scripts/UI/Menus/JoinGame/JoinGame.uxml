@@ -1,0 +1,40 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Menus/JoinGame/JoinGameStyle.uss?fileID=7433441132597879392&amp;guid=d7d99296657014f46ac2c2ad493b481b&amp;type=3#JoinGameStyle" />
+    <Style src="project://database/Assets/_Project/Scripts/UI/Global/Theme/Common/OverlayStyle.uss?fileID=7433441132597879392&amp;guid=739a01c3142d9284da24ae67d73b144b&amp;type=3#OverlayStyle" />
+    <Style src="project://database/Assets/_Project/Scripts/UI/Global/Theme/Common/PixelButtonStyles.uss?fileID=7433441132597879392&amp;guid=bd1d9d82501e44b449b0b494f9b6cb9e&amp;type=3#PixelButtonStyles" />
+    
+    <ui:Template name="ServerItemTemplate" src="project://database/Assets/_Project/Scripts/UI/Menus/JoinGame/ServerItem.uxml" />
+    
+    <ui:VisualElement name="JoinGameOverlay" class="overlay">
+        <ui:VisualElement name="JoinGameWindow" class="window">
+            
+            <ui:VisualElement name="WindowHeader" class="window__header">
+                <ui:Label text="UNIRSE A PARTIDA" name="HeaderTitle" class="window__title" />
+                <ui:Button text="X" name="BtnClose" class="button button--close" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="WindowBody" class="window__body">
+                
+                <ui:VisualElement name="PrivatePanel" class="panel">
+                    <ui:Label text="PARTIDA PRIVADA" class="panel__title" />
+                    <ui:VisualElement class="panel__content-group">
+                        <ui:TextField name="InputCode" password="false" max-length="8" class="input-field input-field--code" />
+                        <ui:Label text="INGRESA CÓDIGO AQUÍ" class="input-hint" />
+                    </ui:VisualElement>
+                    <ui:Button text="UNIRSE CON CÓDIGO" name="BtnJoinWithCode" class="button button--primary" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="PublicPanel" class="panel">
+                    <ui:VisualElement name="PublicHeader" class="panel__header">
+                        <ui:Label text="SERVIDORES PÚBLICOS" class="panel__title panel__title--no-margin" />
+                        <ui:Button text="🔄" name="BtnRefresh" class="button button--refresh" />
+                    </ui:VisualElement>
+                    
+                    <ui:ScrollView name="ServerList" class="server-list">
+                    </ui:ScrollView>
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

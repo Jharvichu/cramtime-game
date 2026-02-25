@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Menus/JoinGame/ServerItemStyle.uss?fileID=7433441132597879392&amp;guid=c4a16ae4abd09324fa8f47408a5d71a2&amp;type=3#ServerItemStyle" />
+    <ui:VisualElement class="server-item">
+        <ui:VisualElement name="ServerIcon" class="server-item__icon" />
+        <ui:VisualElement class="server-item__info">
+            <ui:Label name="ServerName" text="Desarrollo" class="server-item__name" />
+            <ui:Label name="ServerMap" text="Facultad de Sistemas" class="server-item__map-text" />
+        </ui:VisualElement>
+        <ui:Label name="ServerStats" text="2/4" class="server-item__players" />
+        <ui:Button text="JOIN" name="BtnJoinServer" class="button--update server-item__button" />
+    </ui:VisualElement>
+</ui:UXML>

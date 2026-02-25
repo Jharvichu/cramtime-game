@@ -1,0 +1,95 @@
+VisualElement {}
+
+/* Heredamos los tokens del root de tus archivos anteriores */
+:root {
+    --color-key-bg: rgb(245, 245, 245);
+    --color-key-shadow: rgb(180, 180, 180);
+    --color-text-key: rgb(55, 55, 55);
+    --font-pixel: url("project://database/Assets/_Project/Art/Fonts/Minecraft.ttf");
+}
+
+.hud-container {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0); /* Transparente para ver el juego */
+}
+
+/* Anclajes de posición */
+.hud__anchor-tr {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.hud__anchor-tl {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hud__anchor-bottom {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    align-items: center;
+}
+
+/* INFO DE SALA */
+.hud__room-info {
+    color: white;
+    -unity-font-definition: var(--font-pixel);
+    font-size: 20px;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: black;
+}
+
+.hud__room-info--small {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* BOTÓN OPCIONES (Tecla pequeña) */
+.button--settings {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    background-color: var(--color-key-bg);
+    border-radius: 12px;
+    border-width: 2px;
+    border-bottom-width: 8px;
+    border-color: var(--color-key-shadow);
+    color: var(--color-text-key);
+    transition-duration: 0.05s;
+}
+
+.button--settings:active {
+    border-bottom-width: 2px;
+    margin-top: 6px;
+}
+
+/* CONTENEDOR DEL CÓDIGO (Estilo Barra Espaciadora) */
+.code-container {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo tipo vidrio */
+    padding: 10px 40px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.code-label {
+    color: white;
+    -unity-font-definition: var(--font-pixel);
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.code-text {
+    color: white;
+    -unity-font-definition: var(--font-pixel);
+    font-size: 42px;
+    -unity-font-style: bold;
+    letter-spacing: 10px; /* Espaciado entre letras tipo Among Us */
+}

@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Lobby/LobbyHUD/LobbyHUDStyle.uss?fileID=7433441132597879392&amp;guid=442456fa82d8cd04ca4d2159fcf66664&amp;type=3#LobbyHUDStyle" />
+    <ui:VisualElement name="LobbyHUDContainer" class="hud-container">
+        <ui:VisualElement name="TopRightAnchor" class="hud__anchor-tr">
+            <ui:Button text="⚙️" name="BtnSettings" class="button button--settings" />
+        </ui:VisualElement>
+        <ui:VisualElement name="TopLeftAnchor" class="hud__anchor-tl">
+            <ui:Label text="MODO: EXAMEN FINAL" class="hud__room-info" />
+            <ui:Label text="MAPA: FACULTAD DE SISTEMAS" class="hud__room-info hud__room-info--small" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomAnchor" class="hud__anchor-bottom">
+            <ui:VisualElement name="RoomCodeContainer" class="code-container">
+                <ui:Label text="CÓDIGO DE SALA" class="code-label" />
+                <ui:Label text="ABCDEFGH" name="RoomCodeText" class="code-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

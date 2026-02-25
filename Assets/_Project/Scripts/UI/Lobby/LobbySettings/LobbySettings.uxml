@@ -1,0 +1,66 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Lobby/LobbySettings/LobbySettingsStyle.uss?fileID=7433441132597879392&amp;guid=d8636e44845da6644bab36b60c76fbb7&amp;type=3#LobbySettingsStyle" />
+
+    <ui:Template name="PlayerItem" src="project://database/Assets/_Project/Scripts/UI/Lobby/LobbySettings/PlayerItem.uxml" />
+
+    <ui:VisualElement name="LobbySettingsOverlay" class="overlay">
+        <ui:VisualElement name="LobbyWindow" class="window">
+            
+            <ui:VisualElement name="WindowHeader" class="window__header">
+                <ui:Label text="CONFIGURACIÓN DE AULA" class="window__title" />
+                <ui:Button text="X" name="BtnCloseSettings" class="button button--close" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="WindowBody" class="window__body">
+                
+                <ui:VisualElement name="SettingsPanel" class="panel">
+                    <ui:Label text="AJUSTES DEL LOBBY" class="panel__title" />
+                    
+                    <ui:ScrollView class="settings-scroll">
+                        
+                        <ui:VisualElement class="setting-item">
+                            <ui:Label text="NOMBRE DEL LOBBY:" class="setting-label" />
+                            <ui:TextField name="LobbyNameInput" class="input-field--name" max-length="20" placeholder-text="Ej: Final de Algoritmos" />
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="setting-item">
+                            <ui:Label text="SELECCIONAR ESCENARIO:" class="setting-label" />
+                            <ui:VisualElement class="map-selector">
+                                <ui:Button text="&lt;" name="BtnPrevMap" class="button button--arrow" />
+                                <ui:VisualElement class="map-display">
+                                    <ui:Label text="FACULTAD DE CIENCIAS" name="MapNameLabel" class="map-display__text" />
+                                </ui:VisualElement>
+                                <ui:Button text="&gt;" name="BtnNextMap" class="button button--arrow" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="setting-item row">
+                            <ui:Label text="¿ACCESO PRIVADO?" class="setting-label" />
+                            <ui:VisualElement name="PrivacyToggle" class="toggle-slider">
+                                <ui:VisualElement name="ToggleHandle" class="toggle-slider__handle" />
+                                <ui:Label text="NO" name="ToggleText" class="toggle-slider__text" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+
+                        <ui:VisualElement class="setting-item">
+                            <ui:Label text="CAPACIDAD MÁXIMA: 10" name="MaxPlayersLabel" class="setting-label" />
+                            <ui:SliderInt name="MaxPlayersSlider" low-value="4" high-value="10" value="4" />
+                        </ui:VisualElement>
+
+                    </ui:ScrollView>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="PlayersPanel" class="panel">
+                    <ui:Label text="ESTUDIANTES (1/10)" name="PlayerCountTitle" class="panel__title" />
+                    
+                    <ui:ScrollView name="LobbyPlayerList" class="server-list">
+                    </ui:ScrollView>
+
+                    <ui:Button text="INICIAR EXAMEN" name="BtnStartGame" class="button button--primary" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+
+</ui:UXML>

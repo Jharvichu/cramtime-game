@@ -1,0 +1,169 @@
+VisualElement {
+}
+
+:root {
+    --color-bg-window: rgb(45, 45, 48);
+    --color-border-window: rgb(25, 25, 28);
+    --color-bg-paper: rgb(230, 230, 235);
+    --color-border-paper: rgb(180, 180, 190);
+    --color-key-bg: rgb(245, 245, 245);
+    --color-key-bg-hover: rgb(255, 255, 255);
+    --color-key-shadow: rgb(170, 170, 175);
+    --color-key-shadow-active: rgb(100, 100, 110);
+    --color-key-red: rgb(255, 200, 200);
+    --color-text-dark: rgb(40, 40, 45);
+    --color-text-light: rgb(230, 230, 230);
+    --color-text-key: rgb(50, 50, 55);
+    --key-depth: 8px;
+    --key-depth-active: 2px;
+    --key-radius: 10px;
+    --font-pixel: url("project://database/Assets/_Project/Art/Fonts/Minecraft.ttf");
+}
+
+.overlay {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.window {
+    width: 920px;
+    height: 550px;
+    background-color: var(--color-bg-window);
+    border-width: 4px;
+    border-color: var(--color-border-window);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.window__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.window__title {
+    color: var(--color-text-light);
+    font-size: 36px;
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+}
+
+.window__body {
+    flex-direction: row;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.panel {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 20px;
+    background-color: var(--color-bg-paper);
+    border-width: 2px;
+    border-color: var(--color-border-paper);
+    border-radius: 15px;
+    align-items: center;
+}
+
+.panel__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.panel__title {
+    color: var(--color-text-dark);
+    font-size: 22px;
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+    margin-bottom: 25px;
+}
+
+.panel__title--no-margin {
+    margin-bottom: 0;
+    margin-right: 12px;
+}
+
+.input-field {
+    width: 90%;
+    height: 65px;
+    background-color: white;
+    border-width: 3px;
+    border-color: var(--color-key-shadow);
+    border-radius: 10px;
+    color: var(--color-text-key);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 28px;
+    -unity-text-align: middle-center;
+}
+
+.input-field:focus {
+    border-color: rgb(100, 150, 255);
+}
+
+.input-hint {
+    color: var(--color-text-dark);
+    font-size: 14px;
+    -unity-font-definition: var(--font-pixel);
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: var(--color-key-bg);
+    border-radius: var(--key-radius);
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    border-bottom-width: var(--key-depth);
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+    color: var(--color-text-key);
+    transition-duration: 0.05s;
+}
+
+.button--primary {
+    width: 90%;
+    height: 55px;
+    font-size: 20px;
+}
+
+.button--close {
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-key-red);
+    border-color: rgb(220, 170, 170);
+    font-size: 22px;
+}
+
+.button--refresh {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-bottom-width: 4px;
+}
+
+.button:hover {
+    background-color: var(--color-key-bg-hover);
+    scale: 1.03;
+}
+
+.button:active {
+    border-bottom-width: var(--key-depth-active);
+    margin-top: 6px;
+    background-color: rgb(230, 230, 230);
+}
+
+.server-list {
+    flex-grow: 1;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-width: 2px;
+    border-color: var(--color-border-paper);
+    border-radius: 10px;
+    padding: 10px;
+}

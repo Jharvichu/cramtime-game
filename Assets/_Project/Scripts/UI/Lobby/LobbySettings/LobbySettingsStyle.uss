@@ -1,0 +1,264 @@
+VisualElement {}
+/* ====== 0. VARIABLES DE DISEÑO (TOKENS) ====== */
+:root {
+    /* Fondos y Bordes */
+    --color-bg-window: rgb(45, 45, 48);       /* Gris Grafito */
+    --color-border-window: rgb(25, 25, 28);
+    --color-bg-paper: rgb(230, 230, 235);     /* Papel/Ficha */
+    --color-border-paper: rgb(180, 180, 190);
+    
+    /* Keycap Style */
+    --color-key-bg: rgb(245, 245, 245);
+    --color-key-bg-hover: rgb(255, 255, 255);
+    --color-key-shadow: rgb(180, 180, 180);
+    --color-key-shadow-active: rgb(100, 100, 110);
+    
+    /* Colores de Acento */
+    --color-key-blue: rgb(225, 235, 255);     /* Azul UNI suave */
+    --color-key-red: rgb(255, 200, 200);      /* Botón Cerrar/Kick */
+    --color-key-green: rgb(210, 245, 210);    /* Botón Start */
+    
+    /* Tipografía */
+    --color-text-dark: rgb(40, 40, 45);
+    --color-text-light: rgb(230, 230, 230);
+    --color-text-key: rgb(50, 50, 55);
+    --font-pixel: url("project://database/Assets/_Project/Art/Fonts/Minecraft.ttf?fileID=12800000&guid=b88d3f209c0bbd44db924756b919bc69&type=3#Minecraft");
+
+    /* Geometría */
+    --key-depth: 8px;
+    --key-depth-active: 2px;
+    --key-radius: 12px;
+}
+
+/* ====== 1. ESTRUCTURA BASE ====== */
+.overlay {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.window {
+    width: 950px;
+    height: 600px;
+    background-color: var(--color-bg-window);
+    border-width: 4px;
+    border-color: var(--color-border-window);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.window__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.window__title {
+    color: var(--color-text-light);
+    font-size: 32px;
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+}
+
+.window__body {
+    flex-direction: row;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+/* ====== 2. PANELES INTERIORES ====== */
+.panel {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: var(--color-bg-paper);
+    border-width: 2px;
+    border-color: var(--color-border-paper);
+    border-radius: 15px;
+}
+
+.panel__title {
+    color: var(--color-text-dark);
+    font-size: 22px;
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+    margin-bottom: 25px;
+    -unity-text-align: middle-center;
+}
+
+.settings-scroll {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.setting-item {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.setting-item.row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-label {
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 14px;
+    margin-bottom: 8px;
+    -unity-font-style: bold;
+}
+
+/* ====== 3. SELECTOR DE MAPA (FLECHAS) ====== */
+.map-selector {
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button--arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    border-bottom-width: 5px;
+}
+
+.map-display {
+    flex-grow: 1;
+    height: 45px;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    justify-content: center;
+    align-items: center;
+}
+
+.map-display__text {
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+/* ====== 4. TOGGLE DESLIZANTE (SWITCH) ====== */
+.toggle-slider {
+    width: 85px;
+    height: 40px;
+    background-color: var(--color-key-shadow);
+    border-radius: 20px;
+    padding: 5px;
+    flex-direction: row;
+    align-items: center;
+    transition-duration: 0.2s;
+}
+
+.toggle-slider--active {
+    background-color: rgb(100, 180, 255); /* Azul UNI activo */
+}
+
+.toggle-slider__handle {
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-key-bg);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    transition-property: translate;
+    transition-duration: 0.2s;
+}
+
+.toggle-slider--active .toggle-slider__handle {
+    translate: 45px 0;
+}
+
+.toggle-slider__text {
+    position: absolute;
+    right: 12px;
+    color: white;
+    -unity-font-definition: var(--font-pixel);
+    font-size: 12px;
+}
+
+/* ====== 5. BOTONES Y INPUTS ====== */
+.button {
+    background-color: var(--color-key-bg);
+    border-radius: var(--key-radius);
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    border-bottom-width: var(--key-depth);
+    -unity-font-definition: var(--font-pixel);
+    -unity-font-style: bold;
+    color: var(--color-text-key);
+    transition-duration: 0.05s;
+}
+
+.button:hover { background-color: var(--color-key-bg-hover); scale: 1.02; }
+
+.button:active {
+    border-bottom-width: var(--key-depth-active);
+    margin-top: 6px;
+    background-color: rgb(220, 220, 220);
+}
+
+.button--primary { background-color: var(--color-key-green); width: 100%; height: 55px; margin-top: 10px; }
+.button--close { width: 45px; height: 45px; background-color: var(--color-key-red); }
+.button--kick { width: 40px; height: 40px; background-color: var(--color-key-red); font-size: 14px; border-bottom-width: 4px; }
+
+.input-field--name {
+    height: 50px;
+    background-color: white;
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    border-radius: 10px;
+    -unity-font-definition: var(--font-pixel);
+    color: var(--color-text-key);
+    padding-left: 12px;
+    font-size: 18px;
+}
+
+/* ====== 6. LISTA DE ESTUDIANTES ====== */
+.server-list {
+    flex-grow: 1;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-width: 2px;
+    border-color: var(--color-border-paper);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.player-entry {
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.player-entry__name {
+    flex-grow: 1;
+    color: var(--color-text-dark);
+    -unity-font-definition: var(--font-pixel);
+    font-size: 16px;
+}
+
+/* Slider Custom */
+.unity-slider-int #unity-dragger {
+    width: 22px;
+    height: 22px;
+    background-color: var(--color-key-bg);
+    border-width: 2px;
+    border-color: var(--color-key-shadow);
+    border-radius: 11px;
+}
