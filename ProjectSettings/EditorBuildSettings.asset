@@ -11,9 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Project/Scenes/Test/NetworkTest.unity
     guid: 2c19c04ff32ed38428d227c060b22795
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/Test/LobbyTest.unity
     guid: d370bd479d4377e41a5c8767459e707f
+  - enabled: 1
+    path: Assets/_Project/Scenes/Menu.unity
+    guid: 3d0b0db91dbc5da449ac7ef2dbc85bd3
+  - enabled: 1
+    path: Assets/_Project/Scenes/Lobby.unity
+    guid: db97a9926ccf8ab4f953073ef730e565
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
